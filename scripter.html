@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)file:///home_ext/ysance.local/christophe.sebille/projets/perso/scripter/scripter.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>{{ mustache }}</title>
+    <link href="./scripter_files/burt.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="./scripter_files/highlight.css" media="screen" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    
+    <div id="content">
+      <p><input type="button" class="run" value="Render Template"></p>
+       <div id="data-box" style="display: inline-block; vertical-align: top; width:24%">
+
+         <label>JSON <small>(try setting empty to true)</small></label>
+         <textarea class="json">{
+  "header": "Colors",
+  "items": [
+    {"name": "red", "first": true, "url": "#Red"},
+    {"name": "green", "link": true, "url": "#Green"},
+    {"name": "blue", "link": true, "url": "#Blue"}
+  ],
+  "empty": false
+}
+          </textarea>
+         <label>HTML</label>
+      </div>     
+      <div id="template-box" style="display: inline-block;vertical-align: top;width: 75%;">
+        <label>Mustache</label>
+        <textarea class="template">&lt;h1&gt;{{header}}&lt;/h1&gt;
+			{{#bug}}
+			{{/bug}}
+
+			{{#items}}
+			  {{#first}}
+				&lt;li&gt;&lt;strong&gt;{{name}}&lt;/strong&gt;&lt;/li&gt;
+			  {{/first}}
+			  {{#link}}
+				&lt;li&gt;&lt;a href="{{url}}"&gt;{{name}}&lt;/a&gt;&lt;/li&gt;
+			  {{/link}}
+			{{/items}}
+
+			{{#empty}}
+			  &lt;p&gt;The list is empty.&lt;/p&gt;
+			{{/empty}}
+			</textarea>
+      </div>
+
+        <pre class="html sh_html sh_sourceCode"></pre>      
+      
+    </div>
+
+    <script src="./scripter_files/jquery.min.js"></script>
+    <script src="./scripter_files/mustache.js"></script>
+    <script src="./scripter_files/highlight.js"></script>
+    <script src="./scripter_files/tom.js"></script>
+  
+
+
+</body></html>
